@@ -1,0 +1,28 @@
+ {% load staticfiles %} {% load globaltags %}
+
+<div class="panel panel-danger">
+  <div class="sidebar-item  recent">
+    <div class="panel-heading ">
+      <h4>POST TERBARU</h4></div>
+    <div class="panel-body">
+        {% recentposts as recentposts_list %}
+        {% for obj in recentposts_list %}
+      <div class="media">
+        <div class="pull-left">
+          {% if obj.cover %}
+          <a href="{{ obj.get_absolute_url }}"><img src="{{ obj.cover.url }}" alt="" style="width: 52px; height : 52px;"></a>
+          {% else %}
+          <a href="{{ obj.get_absolute_url }}"><img src="{% static 'img/hd.jpg'%}" alt="" style="width: 52px; height : 52px;"></a>
+          {% endif %}
+        </div>
+        <div class="media-body">
+          <h4><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a></h4>
+          <p>posted on : {{ obj.timestamp|date:"d M Y" }}</p>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- </div> -->

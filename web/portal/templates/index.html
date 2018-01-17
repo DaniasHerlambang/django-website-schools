@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% load staticfiles %} {%block title%}{{ post.title }}{% endblock %} {% block content %}
+<style>
+  #back_to_camera {
+    clear: both;
+    display: block;
+    height: 80px;
+    line-height: 40px;
+    padding: 20px;
+  }
+
+  .fluid_container {
+    margin: 0 auto;
+    width: 100%;
+    z-index: 9999;
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="camera_wrap camera_magenta_skin" id="camera_wrap_1">
+    <div data-src="{% static 'img/slider/a.jpg' %}">
+      <div class="camera_caption fadeFromBottom">
+        Paskibra </div>
+    </div>
+    <div data-src="{% static 'img/slider/b.jpg' %}">
+      <div class="camera_caption fadeFromBottom">
+        SMAN 1 SUMBERLAWANG </div>
+    </div>
+    <div data-src="{% static 'img/slider/c.jpg' %}">
+      <div class="camera_caption fadeFromBottom">
+        Duta Wisata </div>
+    </div>
+    <div data-src="{% static 'img/slider/d.jpg' %}">
+      <div class="camera_caption fadeFromBottom">
+        Karnaval </div>
+    </div>
+  </div>
+  <!-- #camera_wrap_1 -->
+</div>
+
+<section id="blog" class="padding-top">
+  <div class="container caption wow fadeInRight">
+    <div class="row ">
+      <div class="col-md-9 col-sm-7 caption ">
+        <h2 class="page-header wow fadeInLeft"><a href="" > BERITA & ARTIKEL</a></h2>
+        <div class="row ">
+          {% for obj in object_list %}
+          <div class="col-md-6 col-sm-12 blog-padding-right " style="height : 500px;">
+            <div class="single-blog two-column wow fadeInRight">
+
+              {% if obj.cover %}
+              <!-- jika ada gambar -->
+              <div class="post-thumb">
+                <a href="{{ obj.get_absolute_url }}" class="recent-work" style="background-image:url({{ obj.cover.url }})"></a>
+                <div class="post-overlay">
+                  <span class="uppercase"><a href="{{ obj.get_absolute_url }}"><small>{{ obj.timestamp|date:"d M Y" }}</small></a></span>
+                </div>
+              </div>
+              {% else %}
+              <!-- jika tidak ada gambar maka default -->
+              <div class="post-thumb">
+                <a href="{{ obj.get_absolute_url }}" class="recent-work" style="background-image:url({% static 'img/hd.jpg'%})"></a>
+                <div class="post-overlay">
+                  <span class="uppercase"><a href="{{ obj.get_absolute_url }}"><small>{{ obj.timestamp|date:"d M Y" }}</small></a></span>
+                </div>
+              </div>
+              {% endif %}
+
+              <div class="post-content overflow">
+                <h2 class="post-title bold wow fadeInRight"><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a></h2> {% if obj.user.get_full_name %}
+                <h3 class="post-author "><a >Posted by {{ obj.user.get_full_name }}</a></h3> {% endif %}
+                <p>
+                  <p>{{ obj.content | safe |striptags | linebreaks| truncatechars:78 }}</p>
+                  <a href="{{ obj.get_absolute_url }}" class="read-more">View More</a>
+                  <!-- <div class="post-bottom overflow">
+            <ul class="nav nav-justified post-nav">
+              <li><a href="#"><i class="fa fa-tag"></i>berita</a></li>
+            </ul>
+          </div> -->
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+          <!-- PAGINASTOR -->
+          <div class=" text-center ">
+            <ul class="pagination ct-azzure">
+              {% if object_list.has_previous %}
+              <li><a href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&laquo;</a></li>
+              {% endif %} {% for pg in object_list.paginator.page_range %} {% if object_list.number == pg %}
+              <li class="active"><a href="?page={{pg}}">{{pg}}</a></li>
+              {% else %}
+              <li><a href="?page={{pg}}">{{pg}}</a></li>
+              {% endif %} {% endfor %} {% if object_list.has_next %}
+              <li><a href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&raquo;</a></li>
+              {% endif %}
+            </ul>
+            </ul>
+          </div>
+
+
+        </br> -->
+        </div>
+      </div>
+
+
+
+      {% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
+<section id="page-breadcrumb">
+  <div class="vertical-center sun">
+    <div class="container">
+      <div class="row">
+        <div class="action">
+          <div class="col-sm-12">
+            <strong><h1 class="title wow fadeInLeft">Gallery</h1></strong>
+            <ol class="breadcrumb wow fadeInRight">
+              <li><a href='{% url "post_home" %}'>Home</a>
+              </li>
+              <li class="active">Gallery</li>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#action-->
+<section id="blog" class="padding-top">
+  <div class="container caption wow fadeInRight">
+    <div class="row ">
+      <div class="col-md-9 col-sm-7 caption wow fadeInUp">
+        <div class="row">
+          {% for obj in object_list %}
+          <div class="col-xs-6 col-sm-6 col-md-4 portfolio-item branded folio">
+
+            <div class="portfolio-wrapper">
+              <div class="portfolio-single">
+                <div class="portfolio-thumb caption wow fadeInUp">
+                  <img src="{{ obj.dokumen_foto.url }}" alt="" class="img-responsive" style="width:261px; height: 200px;">
+                </div>
+                <div class="portfolio-view">
+                  <ul class="nav nav-pills">
+
+                    <li><a href="{{ obj.dokumen_foto.url }}" data-lightbox="example-set"><i class="fa fa-eye"></i>
+
+                                                            </a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="portfolio-info ">
+                <h2><p>{{ obj.nama_foto }}</p></h2>
+              </div>
+            </div>
+
+          </div>
+          {% endfor %}
+
+        </div>
+      <div class="col-md-12  text-center">
+        <ul class="pagination ct-azzure">
+          {% if object_list.has_previous %}
+          <li><a href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&laquo;</a></li>
+          {% endif %}
+          {% for pg in object_list.paginator.page_range %}
+          {% if object_list.number == pg %}
+          <li class="active"><a href="?page={{pg}}" >{{pg}}</a></li>
+          {% else %}
+          <li><a href="?page={{pg}}">{{pg}}</a></li>
+          {% endif %}
+          {% endfor %}
+          {% if object_list.has_next %}
+          <li><a href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&raquo;</a></li>
+          {% endif %}
+        </ul>
+        </ul>
+      </div>
+      </div>
+      {% endblock %}

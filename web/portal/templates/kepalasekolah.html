@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
+<!--/#header-->
+<section id="page-breadcrumb">
+  <div class="vertical-center sun">
+    <div class="container">
+      <div class="row">
+        <div class="action">
+          <div class="col-sm-12">
+            <strong><h1 class="title wow fadeInLeft">KEPALA SEKOLAH</h1></strong>
+            <ol class="breadcrumb wow fadeInRight">
+              <li><a href='{% url "post_home" %}'>Home</a>
+              </li>
+              <li class="active">Kepala Sekolah</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#action-->
+<section id="blog" class="padding-top">
+  <div class="container caption wow fadeInRight">
+    <div class="row ">
+      <div class="col-md-9 col-sm-7 caption wow fadeInUp">
+        <div class="row">
+          <div class="well">
+            <center>
+              <div class="thumbnail">
+                {% for kepsek in diri_kepalasekolah %}
+
+                <a data-lightbox="example-set" href="{{ kepsek.foto_kep_sek.url }}">
+                <img class="img-responsive wow fadeInDown" src="{{ kepsek.foto_kep_sek.url }}" alt="" style="max-height:500x; "></a>
+                <div class="caption wow fadeInUp">
+                  <strong><h2>{{ kepsek.nama_kep_sek }}<br><br>
+                                                    <small>Kepala Sekolah</small>
+                                                </h2>
+                                                <h4>NIP : {{ kepsek.nip_kep_sek }}</h4>
+                                            </strong>
+                  <hr>
+                  <p>{{ kepsek.pesan_kep_sek| safe |striptags | linebreaks}}</p>
+
+                </div>
+                {% endfor %}
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+      {% endblock %}

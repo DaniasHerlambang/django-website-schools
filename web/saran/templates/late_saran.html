@@ -1,0 +1,24 @@
+ {% load staticfiles %} {% load globaltags %}
+
+<div class="panel panel-danger">
+  <div class="sidebar-item  recent">
+    <div class="panel-heading ">
+      <h4>SARAN TERBARU</h4></div>
+    <div class="panel-body">
+      {% recentcomments as recentcomments_list %} {% for obj in recentcomments_list %}
+      <div class="media">
+        <div class="media-body">
+          <h4><a href='{% url "daftar_saran" %}'>{{ obj.nama }} : {{ obj.saran | truncatechars:25 }}</a></h4>
+          <p>posted on : {{ obj.tms|date:"d M Y" }}</p>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- <div class="media-body">
+  <h4><a href="{{ obj.get_absolute_url }}">{{ obj.nama }}</a></h4>
+  <p>kategori : ppdb</p>
+</div> -->

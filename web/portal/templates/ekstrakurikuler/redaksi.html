@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block content %}
+<!--/#header-->        <section id="page-breadcrumb">
+            <div class="vertical-center sun">
+                <div class="container">
+                    <div class="row">
+                        <div class="action">
+                            <div class="col-sm-12">
+                                <strong><h1 class="title">EKTRAKURIKULER</h1></strong>
+                                <ol class="breadcrumb">
+                                    <li><a href='{% url "post_home" %}'>Home</a>
+                                    </li>
+                                    <li><a href='{% url "ekstrakurikuler" %}'>Ekstrakurikuler</a>
+                                    </li>
+                                    <li class="active">Redaksi Brownis</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/#action-->
+        <section id="blog" class="padding-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-7">
+                        <div class="row">
+                            <div class="well wow fadeInUp">
+                                <div class="thumbnail">
+                                    <center><img class="img-responsive" style="max-width: 600px;" src="{% static 'img/pramuka.jpg'%}" alt=""></center>
+                                    <div class="caption">
+                                        <div class="text-center">
+                                            <h3>Redaksi Brownis
+                                                <br>
+                                                <small>Ektrakurikuler</small>
+                                            </h3>
+                                        </div>
+                                        <hr>
+                                        <p><p><strong>Redaksi Berita Warga SMAN1S</strong> (disingkat <strong>Redaksi Brownis</strong>) adalah suatu penerbitan yang ringan dan mudah dibuang, biasanya dicetak pada kertas berbiaya rendah yang disebut kertas koran, yang berisi berita-berita terkini dalam berbagai topik. Topiknya bisa berupa even politik, kriminalitas, olahraga, tajuk rencana, cuaca. Surat kabar juga biasa berisi karikatur yang biasanya dijadikan bahan sindiran lewat gambar berkenaan dengan masalah-masalah tertentu, komik, TTS dan hiburan lainnya.</p></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

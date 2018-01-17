@@ -1,0 +1,126 @@
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
+<section id="page-breadcrumb">
+	<div class="vertical-center sun">
+		<div class="container">
+			<div class="row">
+				<div class="action">
+					<div class="col-sm-12">
+						<strong><h1 class="title wow fadeInLeft">EKTRAKURIKULER</h1></strong>
+						<ol class="breadcrumb wow fadeInRight">
+							<li><a href='{% url "post_home" %}'>Home</a>
+							</li>
+							<li class="active">Siswa</li>
+							<li class="active">Ekstrakurikuler</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/#action-->
+<section id="blog" class="padding-top">
+	<div class="container caption wow fadeInRight">
+		<div class="row ">
+			<div class="col-md-9 col-sm-7 caption wow fadeInUp">
+				<div class="row">
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/pramuka.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>Pramuka</h4></b>
+								<p></p>
+								<a href='{% url "pramuka" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/pramuka.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>Karawitan</h4></b>
+								<p></p>
+								<a href='{% url "karawitan" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/pramuka.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>PKS</h4></b>
+								<p></p>
+								<a href='{% url "pks" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/basket.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>Basket</h4></b>
+								<p></p>
+								<a href='{% url "basket" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/rohis.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>Rohis</h4></b>
+								<p></p>
+								<a href='{% url "rohis" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/paskibra.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>PASKIBRA</h4></b>
+								<p></p>
+								<a href='{% url "paskibra" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/pramuka.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>PMR</h4></b>
+								<p></p>
+								<a href='{% url "pmr" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6" style="height : 350px;">
+						<div class="panel panel-default text-center">
+							<div class="panel-heading wow fadeInDown">
+								<img class="img-thumbnail" src="{% static 'img/eks/pramuka.jpg'%}" style="height : 150px;">
+							</div>
+							<div class="panel-body wow fadeInUp">
+								<b><h4>Redaksi Brownis</h4></b>
+								<p></p>
+								<a href='{% url "redaksi" %}' class="btn btn-primary">Selengkapnya</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{% endblock %}

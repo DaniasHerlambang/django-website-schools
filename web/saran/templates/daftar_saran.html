@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
+<section id="page-breadcrumb">
+  <div class="vertical-center sun">
+    <div class="container">
+      <div class="row">
+        <div class="action">
+          <div class="col-sm-12">
+            <strong><h1 class="title wow fadeInLeft">DAFTAR SARAN</h1></strong>
+            <ol class="breadcrumb wow fadeInRight">
+              <li><a href='{% url "post_home" %}'>Home</a>
+              </li>
+              <li class="active">Saran
+              </li>
+              <li class="active">Daftar Saran</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#action-->
+<section id="blog" class="padding-top ">
+  <div class="container caption wow fadeInRight">
+    <div class="row ">
+      <div class="col-md-9 col-sm-7 caption wow fadeInUp">
+        <div class="row">
+          <div class="well ">
+            <ul class="list-unstyled timeline caption wow fadeInUp">
+              <li>
+                <div class="block ">
+                  <div class="block_content caption wow fadeInUp ">
+                    {% for obj in list_saran %}
+                    <h2 class="title caption wow fadeInUp">
+                      <a target = '_blank' >{{ obj.nama }}</a>
+                                                </h2>
+                    <div class="byline caption wow fadeInLeft">
+                      <span>Saran :------> </span> <a>{{ obj.saran  }}</a>
+                    <!-- </span> <a>{{ obj.saran | safe}}</a> -->
+
+                    </div>
+                    <p class="excerpt caption wow fadeInDown">{{ obj.nomor_atau_email }}</a>
+                    </p>
+                    {% endfor %}
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-12  text-center">
+          <ul class="pagination ct-azzure">
+            {% if list_saran.has_previous %}
+            <li><a href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&laquo;</a></li>
+            {% endif %} {% for pg in list_saran.paginator.page_range %} {% if list_saran.number == pg %}
+            <li class="active"><a href="?page={{pg}}">{{pg}}</a></li>
+            {% else %}
+            <li><a href="?page={{pg}}">{{pg}}</a></li>
+            {% endif %} {% endfor %} {% if list_saran.has_next %}
+            <li><a href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&raquo;</a></li>
+            {% endif %}
+          </ul>
+          </ul>
+        </div>
+      </div>
+
+      {% endblock %}

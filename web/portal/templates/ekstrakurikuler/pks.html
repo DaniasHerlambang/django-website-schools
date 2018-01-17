@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block content %}
+<!--/#header-->        <section id="page-breadcrumb">
+            <div class="vertical-center sun">
+                <div class="container">
+                    <div class="row">
+                        <div class="action">
+                            <div class="col-sm-12">
+                                <strong><h1 class="title">EKTRAKURIKULER</h1></strong>
+                                <ol class="breadcrumb">
+                                    <li><a href='{% url "post_home" %}'>Home</a>
+                                    </li>
+                                    <li><a href='{% url "ekstrakurikuler" %}'>Ekstrakurikuler</a>
+                                    </li>
+                                    <li class="active">PKS</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/#action-->
+        <section id="blog" class="padding-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-7">
+                        <div class="row">
+                            <div class="well wow fadeInUp">
+                                <div class="thumbnail">
+                                    <center><img class="img-responsive" style="max-width: 600px;" src="{% static 'img/pramuka.jpg'%}" alt=""></center>
+                                    <div class="caption">
+                                        <div class="text-center">
+                                            <h3>PKS
+                                                <br>
+                                                <small>Ektrakurikuler</small>
+                                            </h3>
+                                        </div>
+                                        <hr>
+                                        <p><p><strong>PKS</strong> adalah singkatan dari Patroli Keamanan Sekolah jika kita mendengar kata Patroli, tentunya kita teringat tugas-tugas pengawasan daerah sesuai dengan perincian tugas yang dibebankannya, Misalnya Patroli Jalan Raya (PJR) adalah patroli Polisi Lalu Lintas yang tugasnya mengadakan pengawasan keamanan, ketertiban, kelancaran lalu lintas sepanjang jalan tersebut. Begitu pula PKS tidak jauh beda tugasnya dengan PJR tetapi yang membedakannya adalah ruang lingkup tugasnya, PJR bertugas di sepanjang jalan raya sedangkan PKS di lingkungan sekolah serta jalan menuju ke sekolah.</p>
+<p>Didasarkan oleh rasa memiliki terhadap sekolah di dalam menjaga ketertiban dan keamanannnya, maka para pelajar mewujudkan hal tersebut ke dalam suatu wadah organisasi guna mempermudah pengkoodinasiannya. Untuk itulah maka pada tanggal 5 Mei 1975 dibentuklah suatu wadah yang bernama Polisi Keamanan Sekolah. Pada saat itulah ruang lingkup tugas yang diemban Polisi Keamanan Sekolah masih sempit, yaitu hanya sebatas menjaga keamanan sekolah dari tindakan-tindakan yang dilakukan oleh siswa tersebut. Untuk memperluas ruang lingkup dari tugas Polisi Keamanan Sekolah, maka pada tanggal 5 Juni 1975 Polisi Keamanan Sekolah diganti namanya dengan Patroli Keamanan Sekolah dengan persetujuan dari Bapak Letkol. Anton Soedjarwo. Ruang lingkup dari Patroli Keamanan Sekolah mengalami peluasan dan penyempitan. Tugas disempitkan dalam bidang keamanan, Di mana tugas yang diemban Patroli Keamanan Sekolah hanya sebagai pengawas atau pemantau dari tindakan-tindakan negatif yang terjadi di sekolah untuk selanjutnya dilaporkan kepada pihak guru. Sedangkan perluasannya yaitu pada bidang kelalulintasan, di mana seluruh anggota Patroli Keamanan Sekolah wajib mengetahui peraturan-peraturan kelalulintasan.</a>.</p></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

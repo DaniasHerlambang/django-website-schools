@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
+<section id="page-breadcrumb">
+  <div class="vertical-center sun">
+    <div class="container">
+      <div class="row">
+        <div class="action">
+          <div class="col-sm-12">
+            <strong><h1 class="title wow fadeInLeft">Struktur Organisasi </h1></strong>
+            <ol class="breadcrumb wow fadeInRight">
+              <li><a href='{% url "post_home" %}'>Home</a>
+              </li>
+              <li class="active">Struktur Organisasi</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#action-->
+<section id="blog" class="padding-top">
+  <div class="container caption wow fadeInRight">
+    <div class="row ">
+      <div class="col-md-9 col-sm-7 caption wow fadeInUp">
+        <div class="row">
+          <div class="well">
+            <blockquote>
+              <p class="MsoNormal" style="margin-left:21.3pt;text-indent:-18.0pt;line-height: 150%;mso-list:l1 level1 lfo2"><span style="font-size: medium; font-family: helvetica;"><strong>Struktur Organisasi</strong></span></p>
+            </blockquote>
+            <img style="" src="{% static 'img/struktursekolah.jpg'%}" class="img-responsive" alt="Struktur Organisasi">
+          </div>
+        </div>
+      </div>
+      {% endblock %}

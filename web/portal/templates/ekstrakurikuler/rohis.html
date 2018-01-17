@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block content %}
+<!--/#header-->        <section id="page-breadcrumb">
+            <div class="vertical-center sun">
+                <div class="container">
+                    <div class="row">
+                        <div class="action">
+                            <div class="col-sm-12">
+                                <strong><h1 class="title">EKTRAKURIKULER</h1></strong>
+                                <ol class="breadcrumb">
+                                    <li><a href='{% url "post_home" %}'>Home</a>
+                                    </li>
+                                    <li><a href='{% url "ekstrakurikuler" %}'>Ekstrakurikuler</a>
+                                    </li>
+                                    <li class="active">Rohis</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/#action-->
+        <section id="blog" class="padding-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-7">
+                        <div class="row">
+                            <div class="well wow fadeInUp">
+                                <div class="thumbnail">
+                                    <center><img class="img-responsive" style="max-width: 600px;" src="{% static 'img/rohis.jpg'%}" alt=""></center>
+                                    <div class="caption">
+                                        <div class="text-center">
+                                            <h3>Rohis
+                                                <br>
+                                                <small>Ektrakurikuler</small>
+                                            </h3>
+                                        </div>
+                                        <hr>
+                                        <p><p><strong>Rohani Islam</strong> (disingkat <strong>Rohis</strong>) adalah sebuah organisasi memperdalam dan memperkuat ajaran Islam. Rohis sering disebut juga Dewan Keluarga Masjid (DKM).Rohis biasanya dikemas dalam bentuk ekstrakurikuler di sekolah menengah pertama dan sekolah menengah atas.Fungsi Rohis adalah forum, pengajaran, dakwah, dan berbagi pengetahuan Islam. Susunan dalam Rohis layaknya OSIS, di dalamnya terdapat ketua, wakil, bendahara, sekretaris, dan divisi-divisi yang bertugas pada bagiannya masing-masing. Ekskul ini memiliki juga program kerja serta anggaran dasar dan anggaran rumah tangga. Rohis mampu membantu mengembangkan ilmu tentang Islam yang diajarkan di sekolah.</p></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

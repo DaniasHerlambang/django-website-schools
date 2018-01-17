@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block content %}
+<!--/#header-->        <section id="page-breadcrumb">
+            <div class="vertical-center sun">
+                <div class="container">
+                    <div class="row">
+                        <div class="action">
+                            <div class="col-sm-12">
+                                <strong><h1 class="title">EKTRAKURIKULER</h1></strong>
+                                <ol class="breadcrumb">
+                                    <li><a href='{% url "post_home" %}'>Home</a>
+                                    </li>
+                                    <li><a href='{% url "ekstrakurikuler" %}'>Ekstrakurikuler</a>
+                                    </li>
+                                    <li class="active">Palang Merah Remaja (PMR)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/#action-->
+        <section id="blog" class="padding-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-7">
+                        <div class="row">
+                            <div class="well wow fadeInUp">
+                                <div class="thumbnail">
+                                    <center><img class="img-responsive" style="max-width: 600px;" src="{% static 'img/pramuka.jpg'%}" alt=""></center>
+                                    <div class="caption">
+                                        <div class="text-center">
+                                            <h3>Palang Merah Remaja (PMR)
+                                                <br>
+                                                <small>Ektrakurikuler</small>
+                                            </h3>
+                                        </div>
+                                        <hr>
+                                        <p><p><strong>Palang Merah Remaja</strong> (disingkat <strong>PMR</strong>) adalah wadah  pembinaan dan pengembangan anggota remaja PMI, yang selanjutnya disebut  PMR.Terdapat di PMI kota atau kabupaten di seluruh <a title="Indonesia" href="https://id.wikipedia.org/wiki/Indonesia">Indonesia</a>,  dengan anggota lebih dari 5 juta orang, anggota PMR merupakan salah  satu kekuatan PMI dalam melaksanakan kegiatan-kegiatan kemanusiaan  dibidang kesehatan dan siaga bencana, mempromosikan prinsip-prinsip  dasar gerakan palang merah dan bulan sabit merah internasional, serta  mengembangkan kapasitas organisasi PMI.</p>
+<p>Kebijakan PMI dan federasi tentang pembinaan Remaja bahwa:</p>
+<ol>
+<li>Remaja merupakan prioritas pembinaan, baik dalam keanggotaan maupun kegiatan kepalangmerahan.</li>
+<li>Remaja berperan penting dalam pengembangan kegiatan kepalangmerahan.</li>
+<li>Remaja berperan penting dalam perencanaan, pelaksanaan kegiatan dan proses pengambilan keputusan untuk kegiatan PMI.</li>
+<li>Remaja adalah kader relawan.</li>
+<li>Remaja calon pemimpin PMI pada masa depan.</li>
+</ol>
+<p>Palang Merah Remaja atau PMR adalah suatu organisasi binaan dari  Palang Merah Indonesia yang berpusat di sekolah-sekolah ataupun  kelompok-kelompok masyarakat (sanggar, kelompok belajar, dll.) yang  bertujuan membangun dan mengembangkan karakter Kepalangmerahan agar siap  menjadi Relawan PMI pada masa depan.</p></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

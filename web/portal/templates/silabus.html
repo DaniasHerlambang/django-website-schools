@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block content %}
+<!--/#header-->        <section id="page-breadcrumb">
+<div class="vertical-center sun">
+  <div class="container">
+    <div class="row">
+      <div class="action">
+        <div class="col-sm-12">
+          <strong><h1 class="title wow fadeInLeft">SILABUS</h1></strong>
+          <ol class="breadcrumb wow fadeInRight">
+            <li><a href='{% url "post_home" %}'>Home</a>
+            </li>
+            <li class="active">Akademik</li>
+            <li class="active">Silabus</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!--/#action-->
+<section id="blog" class="padding-top">
+  <div class="container caption wow fadeInRight">
+    <div class="row ">
+      <div class="col-md-9 col-sm-7 caption wow fadeInUp">
+        <div class="row">
+          <div class="well table-responsive">
+            <table id="" class="display table table-bordered table-striped">
+              <thead>
+                <tr class="headings">
+                  <th>NO </th>
+                  <th>NAMA SILABUS </th>
+                  <th>AKSI </th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for obj in list_silabus %}
+                <tr>
+                  <td class=" ">{{ obj.id_silabus }}</td>
+                  <td class=" ">{{ obj.nama_silabus }}</td>
+                  <td class=" "><a class="btn btn-sm btn-success" href="{{ obj.dokumen_silabus.url }}">Download</a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      {% endblock %}

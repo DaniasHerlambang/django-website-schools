@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% load staticfiles %}
+{% block content %}
+<!--/#header-->        <section id="page-breadcrumb">
+            <div class="vertical-center sun">
+                <div class="container">
+                    <div class="row">
+                        <div class="action">
+                            <div class="col-sm-12">
+                                <strong><h1 class="title">EKTRAKURIKULER</h1></strong>
+                                <ol class="breadcrumb">
+                                    <li><a href='{% url "post_home" %}'>Home</a>
+                                    </li>
+                                    <li><a href='{% url "ekstrakurikuler" %}'>Ekstrakurikuler</a>
+                                    </li>
+                                    <li class="active">Pramuka</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/#action-->
+        <section id="blog" class="padding-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 col-sm-7">
+                        <div class="row">
+                            <div class="well wow fadeInUp">
+                                <div class="thumbnail">
+                                    <center><img class="img-responsive" style="max-width: 600px;" src="{% static 'img/pramuka.jpg'%}" alt=""></center>
+                                    <div class="caption">
+                                        <div class="text-center">
+                                            <h3>Pramuka
+                                                <br>
+                                                <small>Ektrakurikuler</small>
+                                            </h3>
+                                        </div>
+                                        <hr>
+                                        <p><p><strong>Praja Muda Karana</strong> (disingkat <strong>Pramuka</strong>) adalah nama organisasi pendidikan nonformal yang menyelenggarakan pendidikan kepanduan yang dilaksanakan di <a title="Indonesia" href="https://id.wikipedia.org/wiki/Indonesia">Indonesia</a>. Pramuka merupakan sebutan bagi anggota Gerakan Pramuka, yang meliputi; Pramuka Siaga (7-10 tahun), Pramuka Penggalang (11-15 tahun), Pramuka Penegak (16-20 tahun) dan Pramuka Pandega (21-25 tahun). Kelompok anggota yang lain yaitu Pembina Pramuka, Andalan Pramuka, Korps Pelatih Pramuka, Pamong Saka Pramuka, Staf Kwartir dan Majelis Pembimbing.</p>
+<p>Kepramukaan adalah proses pendidikan di luar lingkungan sekolah dan di luar lingkungan keluarga dalam bentuk kegiatan menarik, menyenangkan, sehat, teratur, terarah, praktis yang dilakukan di alam terbuka dengan Prinsip Dasar Kepramukaan dan Metode Kepramukaan, yang sasaran akhirnya pembentukan watak, akhlak, dan budi pekerti luhur. Kepramukaan adalah sistem pendidikan kepanduan yang disesuaikan dengan keadaan, kepentingan, dan perkembangan masyarakat, dan bangsa <a title="Indonesia" href="https://id.wikipedia.org/wiki/Indonesia">Indonesia</a>.</p></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

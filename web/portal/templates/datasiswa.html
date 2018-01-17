@@ -1,0 +1,120 @@
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
+<!--/#header-->
+<section id="page-breadcrumb">
+  <div class="vertical-center sun">
+    <div class="container">
+      <div class="row">
+        <div class="action">
+          <div class="col-sm-12">
+            <strong><h1 class="title wow fadeInLeft">DIREKTORI SISWA</h1></strong>
+            <ol class="breadcrumb wow fadeInRight">
+              <li><a href='{% url "post_home" %}'>Home</a>
+              </li>
+              <li class="active">Siswa</li>
+              <li class="active">Direktori Siswa</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/#action-->
+<section id="blog" class="padding-top">
+  <div class="container ">
+    <div class="row ">
+      <div class="col-md-9 col-sm-7 ">
+        <div class="row">
+          <div class="well table-responsive">
+            <table id="" class="display table table-bordered table-striped">
+
+              <thead>
+                <tr class="headings">
+                  <!-- <th>No </th> -->
+                  <th>NIS </th>
+                  <th style="width:200px;">NAMA </th>
+                  <th style="width:150px;">Jenis Kelamin </th>
+                  <th>Jurusan </th>
+                  <th>Kelas </th>
+                  <th style="width:20px;">&nbsp;</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for obj in list_siswa %}
+                <tr>
+                  <!-- <td>1</td> -->
+                  <td class=" ">{{ obj.nis_siswa }}</td>
+                  <td class=" ">{{ obj.nama_siswa }}</td>
+
+                  {% if obj.kelamin_siswa == 1 %}
+                    <td class=" ">Perempuan</td>
+                  {% elif obj.kelamin_siswa == 2 %}
+                    <td class=" ">Laki-Laki</td>
+                  {% else %}
+                    <td class=" ">not specified</td>
+                  {% endif %}
+
+                  <td class=" ">{{ obj.siswa_jurusan }}</td>
+                  <td class=" ">{{ obj.siswa_kelas }}</td>
+                  <td class=" ">
+                    <div class="btn-group">
+                      <a href="#" data-toggle="modal" data-target="#{{ obj.id_siswa }}" class="btn btn-sm bg-orange btn-flat" data-toggle="tooltip" data-original-title="Preview"><i class="glyphicon glyphicon-zoom-in"></i></a>
+                    </div>
+                  </td>
+                  <!-- Modal -->
+                  <div class="modal fade" id="{{ obj.id_siswa }}" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Tutup"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">Biodata Siswa</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row">
+                            <div class="col-md-3">
+                              {% if obj.foto_siswa %}
+                              <img src="{{ obj.foto_siswa.url }}" style="max-width:200px;">
+                              {% else %}
+                              <img src="{% static 'img/ico/avatar.png' %}" style="max-width:200px;">
+                              {% endif %}
+
+                            </div>
+                            <div class="col-md-9">
+                              <dl class="dl-horizontal">
+                                <dt>NIS</dt>
+                                <dd>{{ obj.nis_siswa }}</dd>
+                                <dt>Nama</dt>
+                                <dd>{{ obj.nama_siswa }}</dd>
+
+                                <dt>Jenis Kelamin</dt>
+                                {% if obj.kelamin_siswa == 1 %}
+                                  <dd>Perempuan</dd>
+                                {% elif obj.kelamin_siswa == 2 %}
+                                  <dd>Laki-Laki</dd>
+                                {% else %}
+                                  <dd>not specified</dd>
+                                {% endif %}
+
+                                <dt>Jurusan</dt>
+                                <dd>{{ obj.siswa_jurusan }}</dd>
+                                <dt>Kelas</dt>
+                                <dd>{{ obj.siswa_kelas }}</dd>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% endblock %}
