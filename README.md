@@ -1,2 +1,2 @@
 # django-website-schools
-sman1sumberlawang.sch.id
+http://www.sman1sumberlawang.sch.id/
